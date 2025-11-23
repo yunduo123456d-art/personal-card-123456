@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>加我微信 · 个人名片</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB",
+        "Microsoft YaHei", sans-serif;
+      background: #f4f5f7;
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 24px 22px 20px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .header-info {
+      margin-left: 14px;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0 16px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #f0f6ff;
+      color: #2563eb;
+    }
+
+    .section-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .desc {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .qr-box {
+      border-radius: 14px;
+      background: #f7f9fb;
+      padding: 14px 12px 10px;
+      text-align: center;
+      margin-bottom: 16px;
+      border: 1px solid #eef1f6;
+    }
+
+    .qr-box-title {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .qr-tip {
+      font-size: 12px;
+      color: #777;
+      margin-bottom: 10px;
+    }
+
+    .qr-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 12px;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+      object-fit: contain;
+    }
+
+    .wechat-id-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #f3f4f6;
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+
+    .wechat-id-label {
+      color: #555;
+    }
+
+    .wechat-id-value {
+      font-weight: 500;
+    }
+
+    .btn {
+      width: 100%;
+      border: none;
+      outline: none;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-bottom: 8px;
+      transition: transform 0.08s ease, box-shadow 0.12s ease;
+    }
+
+    .btn-primary {
+      background: #1aad19; /* 近似微信绿 */
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(26, 173, 25, 0.28);
+    }
+
+    .btn-secondary {
+      background: #e5f0ff;
+      color: #2563eb;
+      box-shadow: none;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    }
+
+    .footer-tip {
+      margin-top: 4px;
+      text-align: center;
+      font-size: 11px;
+      color: #888;
+      line-height: 1.5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #050816;
+        color: #e5e7eb;
+      }
+      .card {
+        background: #111827;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.65);
+        border: 1px solid #1f2937;
+      }
+      .subtitle,
+      .desc {
+        color: #cbd5f5;
+      }
+      .qr-box {
+        background: #020617;
+        border-color: #1e293b;
+      }
+      .wechat-id-row {
+        background: #111827;
+      }
+      .footer-tip {
+        color: #9ca3af;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header class="header">
+      <div class="avatar">
+        <!-- 这里可以放你的首字母，比如"Y" -->
+        <span>朵</span>
+      </div>
+      <div class="header-info">
+        <div class="name">云朵</div>
+        <div class="subtitle">
+          金融工程 · AI 应用开发<br />一起聊天 / 做项目 / 交朋友
+        </div>
+      </div>
+    </header>
+
+    <div class="tag-list">
+      <span class="tag">AI / 编程</span>
+      <span class="tag">金融工程</span>
+      <span class="tag">共同进步</span>
+    </div>
+
+    <section>
+      <div class="section-title">关于我</div>
+      <p class="desc">
+        我是一名对 AI 应用、产品设计和金融工程都很感兴趣的大学生。
+        <br />
+        如果你也对这些方向好奇，欢迎加我微信，一起交流、一起进步～
+      </p>
+    </section>
+
+    <section class="qr-box">
+      <div class="qr-box-title">扫码添加我的微信</div>
+      <p class="qr-tip">长按识别 / 保存二维码后从相册识别均可</p>
+      <!-- ✅ 把 src="qr.png" 换成你的微信二维码图片路径 -->
+      <img
+        src="qr.png"
+        alt="微信二维码"
+        class="qr-img"
+      />
+    </section>
+
+    <div class="wechat-id-row">
+      <span class="wechat-id-label">微信号</span>
+      <!-- ✅ 这里填你的微信号 -->
+      <span class="wechat-id-value" id="wechatId">d1o2ri9S108</span>
+    </div>
+
+    <button class="btn btn-primary" id="copyBtn">
+      一键复制微信号并去微信添加
+    </button>
+    <button class="btn btn-secondary" onclick="openWeChat()">
+      已复制？点我打开微信
+    </button>
+
+    <p class="footer-tip">
+      小提示：如果你是通过碰 NFC 贴纸进来的，<br />
+      记得给我备注一下"从 NFC 认识的朋友"～
+    </p>
+  </main>
+
+  <script>
+    // 一键复制微信号
+    const copyBtn = document.getElementById("copyBtn");
+    const wechatIdEl = document.getElementById("wechatId");
+
+    copyBtn.addEventListener("click", async () => {
+      const text = wechatIdEl.textContent.trim();
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          // 兼容旧浏览器
+          const textarea = document.createElement("textarea");
+          textarea.value = text;
+          textarea.style.position = "fixed";
+          textarea.style.left = "-9999px";
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+        }
+        copyBtn.textContent = "已复制微信号，去微信添加我吧！";
+        setTimeout(() => {
+          copyBtn.textContent = "一键复制微信号并去微信添加";
+        }, 2200);
+      } catch (e) {
+        copyBtn.textContent = "复制失败，请手动长按复制";
+        setTimeout(() => {
+          copyBtn.textContent = "一键复制微信号并去微信添加";
+        }, 2200);
+      }
+    });
+
+    // 尝试打开微信（有些浏览器会拦截，没关系）
+    function openWeChat() {
+      // 这里使用微信 URL Scheme，是否生效取决于浏览器和系统策略
+      window.location.href = "weixin://";
+    }
+  </script>
+</body>
+</html>
